@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+   <head>
+     <title>AvalancheOS | Lock</title>      
+     <script src="system/js/script.js"></script>	
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+   </head>
+
+
+   <style>
+
+
+body {
+    background-image: url(system/images/bgdark.jpg);
+    background-size: cover;
+}
+
+
+
+h1 {
+  color: white;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+
+}
+h2 {
+  color: white;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+font-size: 80px;
+}
+
+p {
+  color: white;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+
+}
+    
+   #center {
+  position: absolute;
+  top: 45%;
+  width: 99%;
+  text-align: center;
+}
+  #left { 
+                position:absolute;                  
+                bottom:0;                          
+                left:0;
+ 
+            }
+     .left { 
+                position:absolute;                  
+                bottom:0;                          
+                left:0;
+ 
+            }
+     #top { 
+                position:absolute;                  
+                bottom:0;                          
+                top:0;
+ 
+            }
+    #right { 
+                position:absolute;                  
+                bottom:0;                          
+                right:0;                          
+            }
+.btmButtons {
+	 position: absolute;
+	 bottom: 2px;
+	 right: 10px;
+}
+.btmButtons a {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+    text-decoration: transparent;
+}
+    #time {
+      font-family: 'Helvetica', 'Arial', sans-serif;
+    position: absolute;
+    top: 60%;
+    width: 99%;
+    text-align: center;
+    font-size: 40px;
+  }
+
+  </style>
+
+<h1>
+
+  </h1>
+    
+  <h1>
+    
+  <div id="center">Welcome to AvalancheOS. <br>Press enter to login.</div>
+
+
+
+  </h1>
+  <div class="btmButtons">
+    <a href='index.html'><img src="system/images/icons/shutdown-32x32.png" style="height: 42px"; title="Shut's down the PC."></a>
+  </div>
+ 
+
+  
+ 
+
+     
+    <script>
+    document.body.addEventListener("keydown", function (event) {
+    if (event.keyCode === 13) {
+        window.location.replace("desktop.html");
+    }
+     });
+
+     window.addEventListener('touchstart', function() {
+      window.location.replace("desktop.html");
+    });
+    </script>
+
+
+   
+<script>
+function startTime(){
+    var date = new Date();
+    var h = date.getHours(); 
+    var m = date.getMinutes(); 
+   // var s = date.getSeconds(); 
+    var session = "AM";
+    
+    if(h == 0){
+        h = 12;
+    }
+    
+    if(h > 12){
+        h = h - 12;
+        session = "PM";
+    }
+    
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    //s = (s < 10) ? "0" + s : s;
+    
+    var time = h + ":" + m + " " + session;
+    document.getElementById("time").innerText = time;
+    document.getElementById("time").textContent = time;
+    setTimeout(startTime, 1000);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+
+<body onload="startTime()">
+
+ <h2><div id="time"></div></h2>
+  
+
+</html>

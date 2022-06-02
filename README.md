@@ -1,2 +1,1 @@
-# avalancheoslive
-Live channel for AvalancheOS
+AvalancheOS
